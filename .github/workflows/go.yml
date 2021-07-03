@@ -24,6 +24,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Build
       run: ./build
-    - name: Run find
-      run: find . -type f
+    - name: Run butane --version
+      run: ./bin/amd64/butane --version
 
