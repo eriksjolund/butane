@@ -22,8 +22,11 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - name: Check out repository
       uses: actions/checkout@v2
+      with:
+        path: checkout_butane
+        persist-credentials: false
     - name: Build
-      run: ./build
+      run: cd checkout_butane && ./build
     - name: Run butane --version
-      run: ./bin/amd64/butane --version
+      run: ./checkout_butane/bin/amd64/butane --version
 
